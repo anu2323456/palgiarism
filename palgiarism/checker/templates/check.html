@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <div class="container-fluid bg-login">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-12 login-card">
+                    <div class="row">
+                        <div class="col-md-5 detail-part">
+                            <h1>Palgiarism Checker</h1>
+                            <p>Check the palgiarism.</p>
+                        </div>
+                        <div class="col-md-7 logn-part">
+                          <div class="row">
+                              <div class="col-lg-10 col-md-12 mx-auto">
+                                  <div class="logo-cover">
+                                       <img src="{% static 'pexels-donatello-trisolino-1375261.jpg' %}" width="500" height="200" alt="">
+                                   </div>
+                                    <div class="form-cover">
+                                        <h6>Test now</h6>
+                                   <form  method="post" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                    
+
+                                            
+                                            <input type="file" class="form-control-file"accept=".txt" name="File1">
+                                            </div>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            
+                                            
+                                            <input type="file" class="form-control-file"accept=".txt" name="File2">
+                                            </div>
+
+                                            <div class="row form-footer">
+                                                <br>
+                                                <br>
+                                                <input type="submit" class="btn btn-primary">
+                                    
+                                    </form>
+                                    <div class="row">
+                                       
+                                        {% if file1content %}
+                                       <div>
+                                        <h4>Content of First File</h4>
+                                        <textarea id="freeform" name="freeform" rows="10" cols="50"  style="float: left;">
+                                            {{file1content}}
+                                            </textarea>
+                                    
+                                            </div>
+                                           
+                                            {% endif %}
+                                            {% if file2content %}
+                                            
+                                             <div>
+                                               <h4 style="text-align:right;">Content of Second File</h4>
+                                                <textarea id="freeform1" name="freeform1" rows="10" cols="50" style="float: right;">
+                                                {{file2content}}
+                                                </textarea>
+
+                                </div>
+
+                                {% endif %}
+                               
+                                        </div>
+                                        </div>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                        {% if q %}
+                                        <div>
+                                            <textarea id="freeform3" name="freeform3" rows="5" cols="20" style="float: center; margin-left: 200;
+                                            margin-right: 200;" >
+                                                {{q}}
+                                            </textarea>
+                                        </div>
+        
+                                        {% endif %}
+
+</body>
+</html>
